@@ -1,0 +1,27 @@
+import React from 'react';
+
+const products = [
+  { id: 1, name: "Smartphone XYZ", price: 15999, image: "https://via.placeholder.com/150" },
+  { id: 2, name: "Laptop ABC", price: 45999, image: "https://via.placeholder.com/150" },
+  { id: 3, name: "Wireless Earbuds", price: 2999, image: "https://via.placeholder.com/150" },
+];
+
+function FlipkartClone() {
+  return (
+    <div>
+      <h1>Flipkart Product List</h1>
+      <div style={{ display: "flex", gap: "20px" }}>
+        {products.map(p => (
+          <div key={p.id} style={{ border: "1px solid #ddd", padding: "10px", width: "150px" }}>
+            <img src={p.image} alt={p.name} width="150" />
+            <h3>{p.name}</h3>
+            <p>₹{p.price}</p>
+            <button>Add to Cart</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default FlipkartClone;
